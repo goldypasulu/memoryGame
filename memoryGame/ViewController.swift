@@ -55,7 +55,6 @@ class ViewController: UIViewController {
     var timer = Timer()
     var min = 0
     var sec = 0
-    var start = true
     
     @IBOutlet weak var timerKu: UILabel!
     //
@@ -86,25 +85,29 @@ class ViewController: UIViewController {
     
     // TIMER function
     @objc func ticking() {
-        var str = ""
-        if min < 10 {
-            str += "0"
-        }
-        str += String(min) + ":"
-        
-        if sec < 10 {
-            str += "0"
-        }
-        str += String(sec)
-        
-        if sec == 59 {
-            min += 1
-            sec = 0
+        if points < 6 {
+            var str = ""
+            if min < 10 {
+                str += "0"
+            }
+            str += String(min) + ":"
+            
+            if sec < 10 {
+                str += "0"
+            }
+            str += String(sec)
+            
+            if sec == 59 {
+                min += 1
+                sec = 0
+            } else {
+                sec += 1
+            }
+            
+            timerKu.text = str
         } else {
-            sec += 1
+            timer.invalidate()
         }
-        
-        timerKu.text = str
     }
     //
     
