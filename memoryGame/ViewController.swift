@@ -51,13 +51,22 @@ class ViewController: UIViewController {
     
     var points = 0
     
+    // TIMER variables
+    var timer = Timer()
+    var min = 0
+    var sec = 0
+    var start = true
+    
+    @IBOutlet weak var timerKu: UILabel!
+    //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //shuffle images
+        // shuffle images
         images.shuffle()
         
-        //tambah button ke array buttons
+        // tambah button ke array buttons
         buttons.append(button1)
         buttons.append(button2)
         buttons.append(button3)
@@ -70,7 +79,34 @@ class ViewController: UIViewController {
         buttons.append(button10)
         buttons.append(button11)
         buttons.append(button12)
+        
+        // timer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ticking), userInfo: nil, repeats: true)
     }
+    
+    // TIMER function
+    @objc func ticking() {
+        var str = ""
+        if min < 10 {
+            str += "0"
+        }
+        str += String(min) + ":"
+        
+        if sec < 10 {
+            str += "0"
+        }
+        str += String(sec)
+        
+        if sec == 59 {
+            min += 1
+            sec = 0
+        } else {
+            sec += 1
+        }
+        
+        timerKu.text = str
+    }
+    //
     
     @IBAction func button1Action(_ sender: Any) {
         if click == 1 {
