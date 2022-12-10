@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     var click2 = 0
     
     var points = 0
-    
+    var nama = "p"
     // TIMER variables
     var timer = Timer()
     var min = 0
@@ -61,8 +61,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // shuffle images
+        //nsuserdefault for nama orang dan waktu
+        //self.userDefaults.removeObject(forKey: "nama")
+        if self.userDefaults.value(forKey: "nama") != nil {
+
+            arrNama = self.userDefaults.value(forKey: "nama") as! [[String]]
+                }
+                print(arrNama)
+
+        if points == 6{
+                
+        }
+            // shuffle images
         images.shuffle()
         
         // tambah button ke array buttons
@@ -107,8 +117,21 @@ class ViewController: UIViewController {
             timerKu.text = str
         } else {
             timer.invalidate()
+            let arrNamaTemp: [String] = [nama,String(timerKu.text ?? "")]
+            arrNama.append(arrNamaTemp)
+            
+            self.userDefaults.setValue(arrNama, forKey: "nama")
+            print(arrNama)
+            self.userDefaults.synchronize()
         }
     }
+    //NsuserDefaults
+    let userDefaults = UserDefaults.standard
+
+    var arrNama: [[String]] = []
+    
+     
+   
     //
     
     @IBAction func button1Action(_ sender: Any) {
