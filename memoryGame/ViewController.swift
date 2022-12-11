@@ -46,6 +46,9 @@ class ViewController: UIViewController {
     
     var click = 1
     
+    //click array di cek agar tidak bug double click
+    var click_arr = [false, false, false, false, false, false, false, false, false, false, false, false]
+    
     var click1 = 0
     var click2 = 0
     
@@ -138,8 +141,9 @@ class ViewController: UIViewController {
         if click == 1 {
             button1.setImage(UIImage(named: images[0]), for: .normal)
             click = 2
+            click_arr[0] = true
             click1 = 1
-        } else if click == 2{
+        } else if click == 2 && click_arr[0] == false {
             button1.setImage(UIImage(named: images[0]), for: .normal)
             click = 1
             click2 = 1
@@ -151,8 +155,9 @@ class ViewController: UIViewController {
         if click == 1{
             button2.setImage(UIImage(named: images[1]), for: .normal)
             click = 2
+            click_arr[1] = true
             click1 = 2
-        } else if click == 2{
+        } else if click == 2 && click_arr[1] == false {
             button2.setImage(UIImage(named: images[1]), for: .normal)
             click = 1
             click2 = 2
@@ -164,8 +169,9 @@ class ViewController: UIViewController {
         if click == 1{
             button3.setImage(UIImage(named: images[2]), for: .normal)
             click = 2
+            click_arr[2] = true
             click1 = 3
-        } else if click == 2{
+        } else if click == 2 && click_arr[2] == false {
             button3.setImage(UIImage(named: images[2]), for: .normal)
             click = 1
             click2 = 3
@@ -178,8 +184,9 @@ class ViewController: UIViewController {
         if click == 1{
             button4.setImage(UIImage(named: images[3]), for: .normal)
             click = 2
+            click_arr[3] = true
             click1 = 4
-        } else if click == 2{
+        } else if click == 2 && click_arr[3] == false {
             button4.setImage(UIImage(named: images[3]), for: .normal)
             click = 1
             click2 = 4
@@ -191,8 +198,9 @@ class ViewController: UIViewController {
         if click == 1{
             button5.setImage(UIImage(named: images[4]), for: .normal)
             click = 2
+            click_arr[4] = true
             click1 = 5
-        } else if click == 2{
+        } else if click == 2 && click_arr[4] == false {
             button5.setImage(UIImage(named: images[4]), for: .normal)
             click = 1
             click2 = 5
@@ -204,8 +212,9 @@ class ViewController: UIViewController {
         if click == 1{
             button6.setImage(UIImage(named: images[5]), for: .normal)
             click = 2
+            click_arr[5] = true
             click1 = 6
-        } else if click == 2{
+        } else if click == 2 && click_arr[5] == false {
             button6.setImage(UIImage(named: images[5]), for: .normal)
             click = 1
             click2 = 6
@@ -218,8 +227,9 @@ class ViewController: UIViewController {
         if click == 1{
             button7.setImage(UIImage(named: images[6]), for: .normal)
             click = 2
+            click_arr[6] = true
             click1 = 7
-        } else if click == 2{
+        } else if click == 2 && click_arr[6] == false {
             button7.setImage(UIImage(named: images[6]), for: .normal)
             click = 1
             click2 = 7
@@ -231,8 +241,9 @@ class ViewController: UIViewController {
         if click == 1{
             button8.setImage(UIImage(named: images[7]), for: .normal)
             click = 2
+            click_arr[7] = true
             click1 = 8
-        } else if click == 2{
+        } else if click == 2 && click_arr[7] == false {
             button8.setImage(UIImage(named: images[7]), for: .normal)
             click = 1
             click2 = 8
@@ -244,8 +255,9 @@ class ViewController: UIViewController {
         if click == 1{
             button9.setImage(UIImage(named: images[8]), for: .normal)
             click = 2
+            click_arr[8] = true
             click1 = 9
-        } else  if click == 2{
+        } else  if click == 2 && click_arr[8] == false {
             button9.setImage(UIImage(named: images[8]), for: .normal)
             click = 1
             click2 = 9
@@ -258,8 +270,9 @@ class ViewController: UIViewController {
         if click == 1{
             button10.setImage(UIImage(named: images[9]), for: .normal)
             click = 2
+            click_arr[9] = true
             click1 = 10
-        } else if click == 2{
+        } else if click == 2 && click_arr[9] == false {
             button10.setImage(UIImage(named: images[9]), for: .normal)
             click = 1
             click2 = 10
@@ -271,8 +284,9 @@ class ViewController: UIViewController {
         if click == 1{
             button11.setImage(UIImage(named: images[10]), for: .normal)
             click = 2
+            click_arr[10] = true
             click1 = 11
-        } else if click == 2{
+        } else if click == 2 && click_arr[10] == false {
             button11.setImage(UIImage(named: images[10]), for: .normal)
             click = 1
             click2 = 11
@@ -284,8 +298,9 @@ class ViewController: UIViewController {
         if click == 1{
             button12.setImage(UIImage(named: images[11]), for: .normal)
             click = 2
+            click_arr[11] = true
             click1 = 12
-        } else if click == 2{
+        } else if click == 2 && click_arr[11] == false {
             button12.setImage(UIImage(named: images[11]), for: .normal)
             click = 1
             click2 = 12
@@ -313,6 +328,13 @@ class ViewController: UIViewController {
                 
             }
         }
+        //set kembali agar bisa di click lagi
+        click_arr = [false, false, false, false, false, false, false, false, false, false, false, false]
+    }
+    
+    //buat ngecek aja
+    func print_arr(){
+        print(click_arr)
     }
 }
 
