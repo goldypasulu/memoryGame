@@ -20,6 +20,7 @@
 		22BF3FB5293F1B88000C527F /* memoryGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF3FB4293F1B88000C527F /* memoryGameTests.swift */; };
 		22BF3FBF293F1B88000C527F /* memoryGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF3FBE293F1B88000C527F /* memoryGameUITests.swift */; };
 		22BF3FC1293F1B88000C527F /* memoryGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF3FC0293F1B88000C527F /* memoryGameUITestsLaunchTests.swift */; };
+		50DA424429459649006B01E9 /* ViewControllerHighScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA424329459649006B01E9 /* ViewControllerHighScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		22BF3FBA293F1B88000C527F /* memoryGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = memoryGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BF3FBE293F1B88000C527F /* memoryGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memoryGameUITests.swift; sourceTree = "<group>"; };
 		22BF3FC0293F1B88000C527F /* memoryGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memoryGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		50DA424329459649006B01E9 /* ViewControllerHighScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHighScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				22BF3F9D293F1A96000C527F /* AppDelegate.swift */,
 				22BF3F9F293F1A97000C527F /* SceneDelegate.swift */,
 				22BF3FA1293F1A97000C527F /* ViewController.swift */,
+				50DA424329459649006B01E9 /* ViewControllerHighScore.swift */,
 				22BF3FA3293F1A98000C527F /* Main.storyboard */,
 				22BF3FA6293F1B78000C527F /* Assets.xcassets */,
 				22BF3FA8293F1B79000C527F /* LaunchScreen.storyboard */,
@@ -285,6 +288,7 @@
 				22BF3FA2293F1A97000C527F /* ViewController.swift in Sources */,
 				22BF3F9E293F1A96000C527F /* AppDelegate.swift in Sources */,
 				22BF3FA0293F1A97000C527F /* SceneDelegate.swift in Sources */,
+				50DA424429459649006B01E9 /* ViewControllerHighScore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

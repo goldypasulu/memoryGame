@@ -46,14 +46,19 @@ class ViewController: UIViewController {
     
     var click = 1
     
-    //click array di cek agar tidak bug double click
+    // click array di cek agar tidak bug double click
     var click_arr = [false, false, false, false, false, false, false, false, false, false, false, false]
     
     var click1 = 0
     var click2 = 0
     
     var points = 0
-    var nama = "p"
+    var nama = "temp"
+    
+    // NsuserDefaults
+    let userDefaults = UserDefaults.standard
+    var arrNama: [[String]] = []
+    
     // TIMER variables
     var timer = Timer()
     var min = 0
@@ -62,20 +67,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerKu: UILabel!
     //
     
+    // HI-SCORE variables
+    @IBAction func btn_Hiscore(_ sender: Any) {
+        performSegue(withIdentifier: "lihatHiscore", sender: self)
+    }
+    //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //nsuserdefault for nama orang dan waktu
-        //self.userDefaults.removeObject(forKey: "nama")
+        
+        // nsuserdefault for nama orang dan waktu
+        // self.userDefaults.removeObject(forKey: "nama")
         if self.userDefaults.value(forKey: "nama") != nil {
-
             arrNama = self.userDefaults.value(forKey: "nama") as! [[String]]
-                }
-                print(arrNama)
-
-        if points == 6{
-                
         }
-            // shuffle images
+        print(arrNama)
+
+        // shuffle images
         images.shuffle()
         
         // tambah button ke array buttons
@@ -120,21 +128,23 @@ class ViewController: UIViewController {
             timerKu.text = str
         } else {
             timer.invalidate()
-            let arrNamaTemp: [String] = [nama,String(timerKu.text ?? "")]
-            arrNama.append(arrNamaTemp)
             
+            // simpan ke user defaults
+            let arrNamaTemp: [String] = [nama, String(timerKu.text ?? "")]
+            arrNama.append(arrNamaTemp)
             self.userDefaults.setValue(arrNama, forKey: "nama")
-            print(arrNama)
+            // print(arrNama)
             self.userDefaults.synchronize()
         }
     }
-    //NsuserDefaults
-    let userDefaults = UserDefaults.standard
-
-    var arrNama: [[String]] = []
     
-     
-   
+    // HI-SCORE function
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "lihatHiscore" {
+            let dvc = segue.destination as? ViewControllerHighScore
+            dvc?.arrNama = arrNama
+        }
+    }
     //
     
     @IBAction func button1Action(_ sender: Any) {
@@ -332,7 +342,7 @@ class ViewController: UIViewController {
         click_arr = [false, false, false, false, false, false, false, false, false, false, false, false]
     }
     
-    //buat ngecek aja
+    // buat ngecek aja
     func print_arr(){
         print(click_arr)
     }
