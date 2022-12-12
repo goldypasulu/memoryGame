@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -71,7 +72,10 @@ class ViewController: UIViewController {
     @IBAction func btn_Hiscore(_ sender: Any) {
         performSegue(withIdentifier: "lihatHiscore", sender: self)
     }
-    //
+    
+    //sound
+    var soundPlayer: AVAudioPlayer!
+    var soundPlayer_2: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +86,10 @@ class ViewController: UIViewController {
             arrNama = self.userDefaults.value(forKey: "nama") as! [[String]]
         }
         print(arrNama)
+        
+        //play sound
+        playSaveSound()
+        
 
         // shuffle images
         images.shuffle()
@@ -128,6 +136,8 @@ class ViewController: UIViewController {
             timerKu.text = str
         } else {
             timer.invalidate()
+            soundPlayer_2.stop()
+            playSound(soundName: "win")
             
             // simpan ke user defaults
             let arrNamaTemp: [String] = [nama, String(timerKu.text ?? "")]
@@ -148,6 +158,7 @@ class ViewController: UIViewController {
     //
     
     @IBAction func button1Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1 {
             button1.setImage(UIImage(named: images[0]), for: .normal)
             click = 2
@@ -162,6 +173,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func button2Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button2.setImage(UIImage(named: images[1]), for: .normal)
             click = 2
@@ -176,6 +188,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func button3Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button3.setImage(UIImage(named: images[2]), for: .normal)
             click = 2
@@ -191,6 +204,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func button4Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button4.setImage(UIImage(named: images[3]), for: .normal)
             click = 2
@@ -205,6 +219,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func button5Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button5.setImage(UIImage(named: images[4]), for: .normal)
             click = 2
@@ -219,6 +234,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func button6Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button6.setImage(UIImage(named: images[5]), for: .normal)
             click = 2
@@ -234,6 +250,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func button7Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button7.setImage(UIImage(named: images[6]), for: .normal)
             click = 2
@@ -248,6 +265,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func button8Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button8.setImage(UIImage(named: images[7]), for: .normal)
             click = 2
@@ -262,6 +280,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func button9Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button9.setImage(UIImage(named: images[8]), for: .normal)
             click = 2
@@ -277,6 +296,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func button100Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button10.setImage(UIImage(named: images[9]), for: .normal)
             click = 2
@@ -291,6 +311,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func button11Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button11.setImage(UIImage(named: images[10]), for: .normal)
             click = 2
@@ -305,6 +326,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func button12Action(_ sender: Any) {
+        playSound(soundName: "click")
         if click == 1{
             button12.setImage(UIImage(named: images[11]), for: .normal)
             click = 2
@@ -330,6 +352,9 @@ class ViewController: UIViewController {
                 //add points
                 self.points = self.points + 1
                 self.playerPoints.text = "Points: \(self.points)"
+                
+                //sound right choice
+                self.playSound(soundName: "rightChoice")
             }
         } else {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
@@ -345,6 +370,26 @@ class ViewController: UIViewController {
     // buat ngecek aja
     func print_arr(){
         print(click_arr)
+    }
+    
+    func playSound(soundName: String) {
+        let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
+        soundPlayer = try! AVAudioPlayer(contentsOf: url!)
+        soundPlayer.play()
+    }
+    
+    func playSaveSound(){
+        let path = Bundle.main.path(forResource: "background.mp3", ofType: nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            //create your audioPlayer in your parent class as a property
+            soundPlayer_2 = try AVAudioPlayer(contentsOf: url)
+            soundPlayer_2.play()
+            soundPlayer_2.numberOfLoops = -1
+        } catch {
+            print("couldn't load the file")
+        }
     }
 }
 
