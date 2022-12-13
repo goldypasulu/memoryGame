@@ -66,11 +66,26 @@ class ViewController: UIViewController {
     var sec = 0
     
     @IBOutlet weak var timerKu: UILabel!
-    //
     
-    // HI-SCORE variables
     @IBAction func btn_Hiscore(_ sender: Any) {
         performSegue(withIdentifier: "lihatHiscore", sender: self)
+    }
+    
+    @IBAction func btn_Retry(_ sender: Any) {
+        min = 0
+        sec = 0
+        points = 0
+        
+        click = 1
+        click1 = 0
+        click2 = 0
+        images.shuffle()
+        click_arr = [false, false, false, false, false, false, false, false, false, false, false, false]
+        
+        for i in 0...buttons.count-1 {
+            buttons[i].alpha = 1
+            buttons[i].setImage(UIImage(named: "block-2"), for: .normal)
+        }
     }
     
     //sound
