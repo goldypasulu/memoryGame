@@ -147,41 +147,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drO-Ve-Yl7">
-                                <rect key="frame" x="162.5" y="690.5" width="89" height="42"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="36"/>
+                                <rect key="frame" x="142" y="690.5" width="130.5" height="56"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="UbT-fw-omF">
-                                <rect key="frame" x="25" y="757.5" width="364" height="54.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lME-cH-O9m">
+                                <rect key="frame" x="20" y="754" width="374" height="96"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjV-Ex-o83">
-                                        <rect key="frame" x="0.0" y="0.0" width="157" height="54.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjV-Ex-o83">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="96"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Retry">
-                                                    <attributes>
-                                                        <font key="NSFont" size="24" name="Consolas"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="filled" image="retry">
+                                            <attributedString key="attributedTitle"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="btn_Retry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Gb-O4-JAi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-SS-FVx">
-                                        <rect key="frame" x="207" y="0.0" width="157" height="54.5"/>
+                                        <rect key="frame" x="187" y="0.0" width="187" height="96"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Hi-Score">
-                                                    <attributes>
-                                                        <font key="NSFont" size="24" name="Consolas"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="filled" image="highscore">
+                                            <attributedString key="attributedTitle"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="btn_Hiscore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hZN-YH-QwD"/>
@@ -201,14 +191,14 @@
                             <constraint firstItem="jNZ-Zg-7sx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LEA-jG-52E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d4F-7C-aBv" secondAttribute="trailing" constant="150" id="Nnw-NY-cIP"/>
                             <constraint firstItem="drO-Ve-Yl7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ol4-ge-Jqc"/>
-                            <constraint firstItem="UbT-fw-omF" firstAttribute="top" secondItem="drO-Ve-Yl7" secondAttribute="bottom" constant="25" id="Qaw-DP-fKd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lME-cH-O9m" secondAttribute="trailing" constant="20" id="Tim-7W-rzw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lME-cH-O9m" secondAttribute="bottom" constant="12" id="UrX-xx-8vI"/>
                             <constraint firstItem="d4F-7C-aBv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="azu-2q-dFe"/>
                             <constraint firstItem="drO-Ve-Yl7" firstAttribute="top" secondItem="jNZ-Zg-7sx" secondAttribute="bottom" constant="8" symbolic="YES" id="cwN-Y0-QaN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UbT-fw-omF" secondAttribute="bottom" constant="50" id="jK6-N3-c35"/>
+                            <constraint firstItem="lME-cH-O9m" firstAttribute="top" secondItem="drO-Ve-Yl7" secondAttribute="bottom" constant="7.5" id="h3V-bb-h71"/>
                             <constraint firstItem="1gb-C5-U9n" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="m7U-hC-oX6"/>
                             <constraint firstItem="d4F-7C-aBv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="mqL-aA-CPf"/>
-                            <constraint firstItem="UbT-fw-omF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="qHM-D8-C2L"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UbT-fw-omF" secondAttribute="trailing" constant="25" id="sSh-G0-SYB"/>
+                            <constraint firstItem="lME-cH-O9m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oci-e1-snU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bbn-tl-Eou"/>
@@ -246,11 +236,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HI-SCORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W0-zO-pca">
-                                <rect key="frame" x="93" y="98" width="228.5" height="100"/>
+                                <rect key="frame" x="80" y="98" width="254" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="jWH-hp-fCs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -302,35 +292,45 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Tmb-jF-oDb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqe-mI-y4M">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Insert Your Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqe-mI-y4M">
                                 <rect key="frame" x="82" y="388" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" hint="Input your name here!"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="9bo-Dg-A4W"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qn-av-VgP">
-                                <rect key="frame" x="172" y="472" width="70.5" height="31"/>
+                                <rect key="frame" x="131" y="452" width="152" height="142"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="PLAY!!!"/>
+                                <buttonConfiguration key="configuration" style="filled" image="start"/>
                                 <connections>
                                     <action selector="btnPlay:" destination="blF-8p-Aho" eventType="touchUpInside" id="oh8-8M-pFE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQF-Il-yvE">
+                                <rect key="frame" x="30" y="318" width="354" height="40"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yfz-1y-tSw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Tmb-jF-oDb" firstAttribute="leading" secondItem="yfz-1y-tSw" secondAttribute="leading" id="2kU-ea-iTa"/>
+                            <constraint firstItem="EQF-Il-yvE" firstAttribute="top" secondItem="dz9-Kb-DVv" secondAttribute="topMargin" constant="230" id="5F9-LX-hR9"/>
                             <constraint firstItem="Tmb-jF-oDb" firstAttribute="top" secondItem="dz9-Kb-DVv" secondAttribute="top" id="7dI-XV-YBS"/>
                             <constraint firstItem="jqe-mI-y4M" firstAttribute="centerX" secondItem="dz9-Kb-DVv" secondAttribute="centerX" id="G8L-56-oEC"/>
                             <constraint firstItem="Tmb-jF-oDb" firstAttribute="trailing" secondItem="yfz-1y-tSw" secondAttribute="trailing" id="Qnv-o3-eIv"/>
                             <constraint firstItem="8Qn-av-VgP" firstAttribute="centerX" secondItem="dz9-Kb-DVv" secondAttribute="centerX" id="RqB-6I-cgV"/>
+                            <constraint firstItem="jqe-mI-y4M" firstAttribute="top" secondItem="EQF-Il-yvE" secondAttribute="bottom" constant="30" id="dwt-gW-DPt"/>
                             <constraint firstAttribute="bottom" secondItem="Tmb-jF-oDb" secondAttribute="bottom" id="q3h-HC-va9"/>
-                            <constraint firstItem="jqe-mI-y4M" firstAttribute="top" secondItem="yfz-1y-tSw" secondAttribute="top" constant="300" id="vyv-Aa-TVI"/>
-                            <constraint firstItem="8Qn-av-VgP" firstAttribute="top" secondItem="jqe-mI-y4M" secondAttribute="bottom" constant="50" id="xzI-CO-uw9"/>
+                            <constraint firstItem="EQF-Il-yvE" firstAttribute="leading" secondItem="dz9-Kb-DVv" secondAttribute="leadingMargin" constant="10" id="tE6-ep-OfS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EQF-Il-yvE" secondAttribute="trailing" constant="10" id="thu-PO-Vzy"/>
+                            <constraint firstItem="8Qn-av-VgP" firstAttribute="top" secondItem="jqe-mI-y4M" secondAttribute="bottom" constant="30" id="xzI-CO-uw9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oge-Ay-MuT"/>
@@ -365,6 +365,9 @@
     <resources>
         <image name="background" width="564" height="1002"/>
         <image name="block-2" width="100" height="100"/>
+        <image name="highscore" width="64" height="64"/>
+        <image name="retry" width="64" height="64"/>
+        <image name="start" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
